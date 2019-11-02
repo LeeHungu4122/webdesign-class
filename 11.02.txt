@@ -1,0 +1,50 @@
+<li><a href="#">1depth</a>
+            <ul class="sub">
+                <li><a href="#">2depth</a></li>
+                <li><a href="#">2depth</a></li>
+                <li><a href="#">2depth</a></li>
+            </ul>
+</li>
+
+==> 자연스러운 슬라이드 할 때 이런구조로 작성!
+
+.menu::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+는 가로정렬이라고 생각.
+
+a 태그는 inline 이기 때문에 block 을 먹여야 text-align 이 먹는다.
+
+문제에서 하이라이트 ==> hover 입니다.
+
+z-index 는 position 값이 있는애들만 먹힌다.
+
+position 값을 갖는것은 그 부분에서 완전히 뗐다고 생각하면 된다. 이는 높이가 먹지않는다는 설명이다(?).
+
+*************************************************
+opacity 0 과 display none 의 차이점 ? 
+==> opactiy 는 안보이지만 영역이 유지되고 있는 것이고 display는 영역 자체가 사라지는 것이다.
+*************************************************
+
+margin or padding : ?px ?px ?px; 이 들어가면 상 좌우 하 순으로 들어간다. 4개수치일 때는 시계방향으로 상,우,하,좌 순으로 들어간다.
+마진은 위치만 영향(바깥 여백). 패딩은 크기에 영향(내부 여백).
+
+제이쿼리 소스 참조시킬 때 기본 제이쿼리 제공 파일을 반드시 먼저 script 해야 실행이된다.
+
+$(document).ready(function () {
+
+    $(".menu>li").on("mouseover", function () {
+        $(this).children(".sub").stop().slideDown();
+    });
+
+    $(".menu>li").on("mouseleave", function () {
+        $(this).children(".sub").stop().slideUp();
+    });
+
+});
+
+.menu > li 에 마우스를 올렸을 때 this, 즉 마우스 올린것만 선택해서 .sub 를 슬라이드 내려라. stop은 여러변 실행방지로 한번만 실행되게.
+만약에 하나만 올렸을 때 모든 서브메뉴내리고 올릴 때는 this 를 .menu > li 를 대신 넣으면 된다.
