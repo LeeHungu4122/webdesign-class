@@ -1,0 +1,58 @@
+slideup down 에 기본 시간은 400으로 설정되어있다. (0.4초)
+
+tap 키를 눌렀을 때 영역이 파란색 라인으로 잡혀야 인정된다.(li는 li 에 a를 잡아놔야 한다.)
+
+crtl + r -> 눈금자생성 제거
+눈금자 드래그해서 내리면 가이드라인 생성
+
+layers 에서 넣고싶은 칸을 만들고 나서 넣고싶은 그림에 alt키를 누르면 커서가 밑 화살표 모양으로 생긴다. 
+이때 클릭만 해 주면 해당 그림의 밑에있는 레이어에 크기가 맞춰져 들어가진다.
+
+그림은 왠만하면 png 파일로 저장하자! (최대한 이미지 크기를 줄이자.)
+
+아이콘 색깔은 주어진 메인색과 보조색을 이용해서 만든다.
+
+게시글 만들 때 li에다가 border bottom 을 점선이라던지 좀 디자인을 해주면(메인 보조색 활용) 디자인 점수 가산점이 된다.
+
+@@@@@@@@@@@ z-index 는 absolute 값이 적용된 애 한테 사용될 수 있다. @@@@@@@@@@@@@
+
+***** 로고를 만들라고 하면 최대한 간단히 만드는 방향으로 하고 script를 정확히 하는데에 신경쓰자! *****
+
+***** 더 부분이 세로 레이아웃 인 문제 연습해서 시험보기!!! *****
+
+    start();
+    
+    var imgs = 2;
+    var now = 0;
+    
+    function start() {
+        $(".imgs > img").eq(0).siblings().css("opacity", 0)
+        setInterval(function(){slide()},3000);
+    };
+    
+    function slide() {
+        now = now==imgs? 0 : now+=1;
+        /* ? 는 true : 은 false */
+        
+        $(".imgs > img").eq(now-1).css("opacity", 0)
+        $(".imgs > img").eq(now).css("opacity", 1)
+    };
+    
+    strat();
+    
+    var imgs = 2;
+    var now = 0;
+    
+    function start() {
+        $(".imgs > img").eq(0).siblings().css("opacity", 0)
+        setIn
+    }
+});
+
+==> 슬라이더 부분 이미지 전환 부분.
+
+        $(".imgs > img").eq(now-1).css("margin-left", "-2000px")
+        $(".imgs > img").eq(now).css("margin-left", "0px")
+
+==> 이것은 위 슬라이더 부분에서 이렇게만 바꿔주면 좌측에서 이미지 바뀌는 것으로 전환된다.
+(단 변수를 사용하지 않으므로 변수지정부분은 빼고.)
