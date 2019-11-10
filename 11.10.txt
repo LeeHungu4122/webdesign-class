@@ -1,0 +1,21 @@
+실제 시험볼 때 내가안쓴 이미지는 삭제하자!
+
+.after::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+다시한번 강조..
+
+양옆으로 인라인 정렬 하려고 싶으면 after를 꼭 넣자.
+
+공지사항 같은데에 글 리스트 밑에마다 밑줄넣는것도 디자인점수! (주색깔 활용.)
+갤러리 사진에 hover시에 opacity나 그런거도 추가해도 좋다.
+
+<div class="pop"></div>
+        <br>
+<button class="btn">닫기</button>
+==> 팝업창 구성에서 닫기버튼과 본내용의 여백을 위해 br을 추가해준다.
+
+popup 내에 추가되는 이미지도 포토샵 작업을 해야 한다.
